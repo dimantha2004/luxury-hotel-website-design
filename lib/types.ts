@@ -34,3 +34,22 @@ export interface GalleryImage {
   image: string
   category: 'rooms' | 'restaurant' | 'amenities' | 'views'
 }
+
+export interface Tour {
+  id: string
+  name: string
+  category: 'beach' | 'wildlife' | 'cultural' | 'hill-country' | 'adventure' | 'family'
+  duration: string
+  startingPrice: number
+  image: string
+  description: string
+  itinerary: string[]
+  includedServices: string[]
+  pickupDropoff: string
+  transportation: string
+  mealsIncluded: string
+  placesCovered: string[]
+  travelTime: string
+  whatToBring: string[]
+  photoGallery: string[]
+}
