@@ -146,7 +146,7 @@ export const testimonials: Testimonial[] = [
     id: '1',
     name: 'Margaret Sterling',
     role: 'CEO, Sterling Enterprises',
-    content: 'La Villa Banya exceeded all expectations. The attention to detail and world-class service made our stay unforgettable. We will definitely return.',
+    content: 'Thilina travels & stay exceeded all expectations. The attention to detail and world-class service made our stay unforgettable. We will definitely return.',
     rating: 5,
     image: '/testimonials/margaret.jpg',
   },

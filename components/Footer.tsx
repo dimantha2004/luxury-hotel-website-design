@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-              La Villa Banya
+              Thilina travels & stay
             </h3>
             <p className="text-primary-foreground/70">
               Experience timeless luxury and exceptional hospitality.
@@ -60,7 +60,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-primary-foreground/20 pt-8">
           <p className="text-center text-primary-foreground/60 text-sm">
-            &copy; {new Date().getFullYear()} La Villa Banya. All rights reserved.
+            &copy; {new Date().getFullYear()} Thilina travels & stay. All rights reserved.
           </p>
         </div>
       </div>

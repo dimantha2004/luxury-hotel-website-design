@@ -23,7 +23,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="#" className="flex items-center">
             <span className="text-2xl font-bold text-primary" style={{ fontFamily: 'var(--font-heading)' }}>
-              La Villa Banya
+              Thilina travels & stay
             </span>
           </Link>
 
@@ -38,7 +38,7 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="bg-accent text-accent-foreground px-6 py-2 rounded hover:opacity-90 transition-opacity text-sm font-medium inline-block">
+            <Link href="/booking" className="bg-accent text-accent-foreground px-6 py-2 rounded hover:opacity-90 transition-opacity text-sm font-medium inline-block">
               Book Now
             </Link>
           </div>
@@ -66,7 +66,7 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="block w-full bg-accent text-accent-foreground px-4 py-2 rounded hover:opacity-90 transition-opacity text-sm font-medium text-center">
+            <Link href="/booking" className="block w-full bg-accent text-accent-foreground px-4 py-2 rounded hover:opacity-90 transition-opacity text-sm font-medium text-center">
               Book Now
             </Link>
           </div>

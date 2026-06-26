@@ -14,8 +14,8 @@ const playfairDisplay = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'La Villa Banya - Luxury Hotel & Restaurant',
-  description: 'Experience luxury at La Villa Banya. A premier 5-star hotel and fine dining restaurant destination with world-class accommodations and cuisine.',
+  title: 'Thilina travels & stay - Luxury Hotel & Restaurant',
+  description: 'Experience luxury at Thilina travels & stay. A premier 5-star hotel and fine dining restaurant destination with world-class accommodations and cuisine.',
   generator: 'v0.app',
   icons: {
     icon: [

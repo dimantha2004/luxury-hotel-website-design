@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import Link from 'next/link'
 import { rooms } from '@/lib/data'
 import { Star } from 'lucide-react'
 
@@ -121,9 +122,12 @@ export default function RoomsPage() {
                   </div>
 
                   {/* Button */}
-                  <button className="w-full mt-4 bg-primary text-primary-foreground py-2 rounded hover:opacity-90 transition-opacity font-semibold">
+                  <Link
+                    href={`/booking?type=room&roomType=${room.category}`}
+                    className="block text-center w-full mt-4 bg-primary text-primary-foreground py-2 rounded hover:opacity-90 transition-opacity font-semibold"
+                  >
                     Book Room
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

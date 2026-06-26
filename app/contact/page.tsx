@@ -9,11 +9,6 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    checkIn: '',
-    checkOut: '',
-    guests: '1',
-    roomType: 'deluxe',
     message: '',
   })
 
@@ -34,11 +29,6 @@ export default function ContactPage() {
       setFormData({
         name: '',
         email: '',
-        phone: '',
-        checkIn: '',
-        checkOut: '',
-        guests: '1',
-        roomType: 'deluxe',
         message: '',
       })
     }, 3000)
@@ -104,20 +94,20 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Booking Form */}
+            {/* Contact Form */}
             <div className="md:col-span-2 bg-card p-8 rounded shadow-lg">
               <h2 className="text-3xl font-bold mb-6 text-primary" style={{ fontFamily: 'var(--font-heading)' }}>
-                Book Your Stay
+                Send Us a Message
               </h2>
 
               {submitted && (
                 <div className="mb-6 p-4 bg-accent/20 text-accent-foreground rounded">
-                  <p className="font-semibold">Thank you! We&apos;ll contact you soon to confirm your reservation.</p>
+                  <p className="font-semibold">Thank you! Your message has been sent successfully.</p>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium mb-2 text-foreground">Full Name</label>
                     <input
@@ -145,88 +135,24 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-foreground">Phone</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-foreground">Guests</label>
-                    <select
-                      name="guests"
-                      value={formData.guests}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
-                    >
-                      {[1, 2, 3, 4, 5, 6].map(n => (
-                        <option key={n} value={n}>{n} {n === 1 ? 'Guest' : 'Guests'}</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-foreground">Check-in Date</label>
-                    <input
-                      type="date"
-                      name="checkIn"
-                      value={formData.checkIn}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-foreground">Check-out Date</label>
-                    <input
-                      type="date"
-                      name="checkOut"
-                      value={formData.checkOut}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
-                    />
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium mb-2 text-foreground">Room Type</label>
-                    <select
-                      name="roomType"
-                      value={formData.roomType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
-                    >
-                      <option value="suite">Presidential Suite</option>
-                      <option value="deluxe">Deluxe Room</option>
-                      <option value="standard">Standard Room</option>
-                    </select>
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium mb-2 text-foreground">Special Requests</label>
+                    <label className="block text-sm font-medium mb-2 text-foreground">Message</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows={4}
+                      rows={5}
+                      required
                       className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
-                      placeholder="Any special requests or preferences..."
+                      placeholder="How can we help you?"
                     />
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:opacity-90 transition-opacity"
+                  className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:opacity-90 transition-opacity mt-4"
                 >
-                  Request Reservation
+                  Send Message
                 </button>
               </form>
             </div>

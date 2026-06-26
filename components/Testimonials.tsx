@@ -12,7 +12,7 @@ export default function Testimonials() {
             Guest Testimonials
           </h2>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
-            Hear from our distinguished guests about their unforgettable experiences at La Villa Banya.
+            Hear from our distinguished guests about their unforgettable experiences at Thilina travels & stay.
           </p>
         </div>
 

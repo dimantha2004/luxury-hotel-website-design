@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Background Image */}
       <Image
         src="/hero.png"
-        alt="La Villa Banya luxury hotel entrance"
+        alt="Thilina travels & stay luxury hotel entrance"
         fill
         className="object-cover"
         priority
@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="relative h-full flex items-center justify-center text-center text-white px-4">
         <div className="max-w-3xl">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance" style={{ fontFamily: 'var(--font-heading)' }}>
-            La Villa Banya
+            Thilina travels & stay
           </h1>
           <p className="text-xl sm:text-2xl mb-8 text-balance">
             Experience Timeless Luxury and Exceptional Hospitality
