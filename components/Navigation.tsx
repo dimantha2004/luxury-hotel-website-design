@@ -11,6 +11,7 @@ export default function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/rooms', label: 'Rooms' },
     { href: '/dining', label: 'Dining' },
+    { href: '/#tours', label: 'Tours' },
     { href: '/gallery', label: 'Gallery' },
     { href: '/contact', label: 'Contact' },
   ]
