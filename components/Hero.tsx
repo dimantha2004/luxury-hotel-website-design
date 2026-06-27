@@ -24,14 +24,7 @@ export default function Hero() {
           <p className="text-xl sm:text-2xl mb-8 text-balance">
             Experience Timeless Luxury and Exceptional Hospitality
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-accent text-accent-foreground px-8 py-3 rounded font-semibold hover:opacity-90 transition-opacity">
-              Explore Rooms
-            </button>
-            <button className="bg-white/20 text-white px-8 py-3 rounded font-semibold hover:bg-white/30 transition-colors border border-white/40">
-              Learn More
-            </button>
-          </div>
+
         </div>
       </div>
     </section>

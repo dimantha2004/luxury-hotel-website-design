@@ -13,25 +13,44 @@ export default function ContactPage() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate form submission
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
+    setLoading(true)
+    setError('')
+
+    try {
+      const res = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
-    }, 3000)
+
+      if (res.ok) {
+        setSubmitted(true)
+        setTimeout(() => {
+          setSubmitted(false)
+          setFormData({
+            name: '',
+            email: '',
+            message: '',
+          })
+        }, 3000)
+      } else {
+        setError('Failed to send message. Please try again.')
+      }
+    } catch (err) {
+      setError('Something went wrong. Please check your connection.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -103,6 +122,12 @@ export default function ContactPage() {
                 </div>
               )}
 
+              {error && (
+                <div className="mb-6 p-4 bg-destructive/20 text-destructive rounded">
+                  <p className="font-semibold">{error}</p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-4">
                   <div>
@@ -147,9 +172,10 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:opacity-90 transition-opacity mt-4"
+                  disabled={loading}
+                  className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:opacity-90 transition-opacity mt-4 disabled:opacity-50"
                 >
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
