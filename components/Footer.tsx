@@ -43,15 +43,15 @@ export default function Footer() {
             <ul className="space-y-3 text-primary-foreground/70">
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="mt-0.5 flex-shrink-0" />
-                <span>123 Coastal Avenue<br/>Paradise Bay, PB 12345</span>
+                <span>Thilina home stay<br />21 post denike rikillagskda</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} />
-                <span>+1 (555) 123-4567</span>
+                <span>+94783113499</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} />
-                <span>info@lavillabanya.com</span>
+                <span>rthilina021@gmail.com</span>
               </li>
             </ul>
           </div>

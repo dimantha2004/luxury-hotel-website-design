@@ -37,7 +37,7 @@ export default function ContactPage() {
   return (
     <main className="w-full">
       <Navigation />
-      
+
       {/* Header */}
       <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground text-center">
         <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
@@ -59,9 +59,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-lg mb-2">Address</h3>
                   <p className="text-foreground/70">
-                    123 Coastal Avenue<br />
-                    Paradise Bay, PB 12345<br />
-                    Luxury Coast
+                    Thilina home stay<br />
+                    21 post denike rikillagskda
                   </p>
                 </div>
               </div>
@@ -70,8 +69,7 @@ export default function ContactPage() {
                 <Phone className="text-accent flex-shrink-0 mt-1" size={24} />
                 <div>
                   <h3 className="font-bold text-lg mb-2">Phone</h3>
-                  <p className="text-foreground/70">+1 (555) 123-4567</p>
-                  <p className="text-foreground/70">+1 (555) 123-4568</p>
+                  <p className="text-foreground/70">+94783113499</p>
                 </div>
               </div>
 
@@ -79,8 +77,7 @@ export default function ContactPage() {
                 <Mail className="text-accent flex-shrink-0 mt-1" size={24} />
                 <div>
                   <h3 className="font-bold text-lg mb-2">Email</h3>
-                  <p className="text-foreground/70">info@lavillabanya.com</p>
-                  <p className="text-foreground/70">reservations@lavillabanya.com</p>
+                  <p className="text-foreground/70">rthilina021@gmail.com</p>
                 </div>
               </div>
 
