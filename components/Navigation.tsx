@@ -10,7 +10,7 @@ export default function Navigation() {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/rooms', label: 'Rooms' },
-    { href: '/dining', label: 'Dining' },
+    // { href: '/dining', label: 'Dining' },
     { href: '/#tours', label: 'Tours' },
     { href: '/gallery', label: 'Gallery' },
     { href: '/contact', label: 'Contact' },
@@ -38,9 +38,7 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/booking" className="bg-accent text-accent-foreground px-6 py-2 rounded hover:opacity-90 transition-opacity text-sm font-medium inline-block">
-              Book Now
-            </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -66,9 +64,7 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/booking" className="block w-full bg-accent text-accent-foreground px-4 py-2 rounded hover:opacity-90 transition-opacity text-sm font-medium text-center">
-              Book Now
-            </Link>
+
           </div>
         )}
       </div>
