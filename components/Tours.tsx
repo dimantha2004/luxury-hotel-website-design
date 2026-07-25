@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import ScrollReveal from './ScrollReveal'
 
 interface TourPackage {
   id: string
@@ -111,68 +112,78 @@ export default function Tours() {
     <section id="tours" className="w-full py-16 md:py-24 bg-white text-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
-        <div className="text-center mb-12 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#0a0c27] tracking-tight mb-6">
-            Our Tour Packages
-          </h2>
-          <p className="text-sm md:text-base text-slate-500 leading-relaxed font-normal px-4">
-            Whether you&apos;re a solo traveler seeking adventure, a couple on a romantic getaway, or a family looking for a fun-filled vacation, Tours Sri Lanka is dedicated to crafting custom itineraries that suit your unique style and interests. Our packages are thoughtfully designed to ensure you experience the best of Sri Lanka while catering to your specific travel needs. From exciting adventures to relaxing escapes, we have something for everyone.
-          </p>
-        </div>
+        <ScrollReveal direction="down" duration={0.8}>
+          <div className="text-center mb-12 max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#0a0c27] tracking-tight mb-6">
+              Our Tour Packages
+            </h2>
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed font-normal px-4">
+              Whether you&apos;re a solo traveler seeking adventure, a couple on a romantic getaway, or a family looking for a fun-filled vacation, Tours Sri Lanka is dedicated to crafting custom itineraries that suit your unique style and interests. Our packages are thoughtfully designed to ensure you experience the best of Sri Lanka while catering to your specific travel needs. From exciting adventures to relaxing escapes, we have something for everyone.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Tour Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
-          {tourPackages.map((pkg) => (
-            <div key={pkg.id} className="flex flex-col items-center group">
-              {/* Image & Hover Card Container */}
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-slate-100 transition-all duration-300">
-                {/* Background Image */}
-                <Image
-                  src={pkg.image}
-                  alt={pkg.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+          {tourPackages.map((pkg, index) => (
+            <ScrollReveal
+              key={pkg.id}
+              direction="up"
+              delay={(index % 3) * 0.15}
+              duration={0.6}
+            >
+              <div className="flex flex-col items-center group">
+                {/* Image & Hover Card Container */}
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-slate-100 transition-all duration-300 group-hover:shadow-2xl">
+                  {/* Background Image */}
+                  <Image
+                    src={pkg.image}
+                    alt={pkg.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
 
-                {/* Default State Badge (Overlaid at bottom of image) */}
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[85%] text-center transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
-                  <div className="bg-[#0b0c26] text-white font-bold text-base md:text-lg py-2.5 px-4 rounded-xl shadow-lg">
-                    {pkg.badgeTitle}
+                  {/* Default State Badge (Overlaid at bottom of image) */}
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[85%] text-center transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
+                    <div className="bg-[#0b0c26] text-white font-bold text-base md:text-lg py-2.5 px-4 rounded-xl shadow-lg">
+                      {pkg.badgeTitle}
+                    </div>
+                  </div>
+
+                  {/* Hover / Active Dark Card Overlay (Exact match to Image 2) */}
+                  <div className="absolute inset-0 bg-[#0b0c26] p-6 text-white flex flex-col justify-between items-center text-center opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl z-10">
+                    <h3 className="text-xl font-bold text-white pt-2">
+                      {pkg.hoverTitle}
+                    </h3>
+                    <p className="text-xs md:text-sm text-slate-300 leading-relaxed max-w-xs">
+                      {pkg.description}
+                    </p>
+                    <Link
+                      href={pkg.link}
+                      className="w-full bg-[#ffcc00] hover:bg-[#e6b800] text-slate-900 font-bold py-2.5 px-6 rounded-full shadow-md transition-colors text-sm"
+                    >
+                      Read More
+                    </Link>
                   </div>
                 </div>
 
-                {/* Hover / Active Dark Card Overlay (Exact match to Image 2) */}
-                <div className="absolute inset-0 bg-[#0b0c26] p-6 text-white flex flex-col justify-between items-center text-center opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl z-10">
-                  <h3 className="text-xl font-bold text-white pt-2">
-                    {pkg.hoverTitle}
-                  </h3>
-                  <p className="text-xs md:text-sm text-slate-300 leading-relaxed max-w-xs">
-                    {pkg.description}
-                  </p>
+                {/* Default Below Card Button (Visible when not hovering) */}
+                <div className="mt-4 transition-opacity duration-300 group-hover:opacity-0">
                   <Link
                     href={pkg.link}
-                    className="w-full bg-[#ffcc00] hover:bg-[#e6b800] text-slate-900 font-bold py-2.5 px-6 rounded-full shadow-md transition-colors text-sm"
+                    className="inline-block bg-[#f0f4f8] hover:bg-slate-200 text-[#ffb700] font-semibold text-sm py-2 px-8 rounded-full shadow-sm transition-colors"
                   >
                     Read More
                   </Link>
                 </div>
               </div>
-
-              {/* Default Below Card Button (Visible when not hovering) */}
-              <div className="mt-4 transition-opacity duration-300 group-hover:opacity-0">
-                <Link
-                  href={pkg.link}
-                  className="inline-block bg-[#f0f4f8] hover:bg-slate-200 text-[#ffb700] font-semibold text-sm py-2 px-8 rounded-full shadow-sm transition-colors"
-                >
-                  Read More
-                </Link>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
     </section>
   )
 }
+
 

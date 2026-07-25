@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import { X } from 'lucide-react'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const roomImages = [
   { id: 'r1', src: '/images/room/WhatsApp%20Image%202026-06-26%20at%2010.09.12%20PM.jpeg', alt: 'Room View 1' },
@@ -55,12 +56,14 @@ export default function GalleryPage() {
       
       {/* Header */}
       <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground text-center">
-        <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-          Gallery
-        </h1>
-        <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-          Explore the stunning beauty and luxury of Thilina travels & stay through our collection of photographs.
-        </p>
+        <ScrollReveal direction="down" duration={0.8}>
+          <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
+            Gallery
+          </h1>
+          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+            Explore the stunning beauty and luxury of Thilina travels & stay through our collection of photographs.
+          </p>
+        </ScrollReveal>
       </div>
 
       {/* Gallery Section */}
@@ -69,62 +72,78 @@ export default function GalleryPage() {
           
           {/* Rooms Gallery */}
           <div>
-            <h2 className="text-3xl font-bold mb-8 text-primary border-b border-border pb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-              Rooms
-            </h2>
+            <ScrollReveal direction="left" duration={0.6}>
+              <h2 className="text-3xl font-bold mb-8 text-primary border-b border-border pb-4" style={{ fontFamily: 'var(--font-heading)' }}>
+                Rooms
+              </h2>
+            </ScrollReveal>
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-              {roomImages.map((image) => (
-                <div
+              {roomImages.map((image, index) => (
+                <ScrollReveal
                   key={image.id}
-                  className="break-inside-avoid cursor-pointer group"
-                  onClick={() => setSelectedImage(image.src)}
+                  direction="scale"
+                  delay={(index % 6) * 0.06}
+                  duration={0.5}
                 >
-                  <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={400}
-                      height={400}
-                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                      <span className="text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold">
-                        {image.alt}
-                      </span>
+                  <div
+                    className="break-inside-avoid cursor-pointer group"
+                    onClick={() => setSelectedImage(image.src)}
+                  >
+                    <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={400}
+                        height={400}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <span className="text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold">
+                          {image.alt}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
 
           {/* Tours Gallery */}
           <div>
-            <h2 className="text-3xl font-bold mb-8 text-primary border-b border-border pb-4 pt-8" style={{ fontFamily: 'var(--font-heading)' }}>
-              Tours
-            </h2>
+            <ScrollReveal direction="left" duration={0.6}>
+              <h2 className="text-3xl font-bold mb-8 text-primary border-b border-border pb-4 pt-8" style={{ fontFamily: 'var(--font-heading)' }}>
+                Tours
+              </h2>
+            </ScrollReveal>
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-              {tourImages.map((image) => (
-                <div
+              {tourImages.map((image, index) => (
+                <ScrollReveal
                   key={image.id}
-                  className="break-inside-avoid cursor-pointer group"
-                  onClick={() => setSelectedImage(image.src)}
+                  direction="scale"
+                  delay={(index % 6) * 0.06}
+                  duration={0.5}
                 >
-                  <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={400}
-                      height={400}
-                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                      <span className="text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold">
-                        {image.alt}
-                      </span>
+                  <div
+                    className="break-inside-avoid cursor-pointer group"
+                    onClick={() => setSelectedImage(image.src)}
+                  >
+                    <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={400}
+                        height={400}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <span className="text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold">
+                          {image.alt}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
