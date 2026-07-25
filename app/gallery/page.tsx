@@ -55,25 +55,25 @@ export default function GalleryPage() {
       <Navigation />
       
       {/* Header */}
-      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground text-center">
+      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#0b0c26] text-white text-center">
         <ScrollReveal direction="down" duration={0.8}>
           <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Gallery
           </h1>
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Explore the stunning beauty and luxury of Thilina travels & stay through our collection of photographs.
           </p>
         </ScrollReveal>
       </div>
 
       {/* Gallery Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#faf9f5]">
         <div className="max-w-7xl mx-auto space-y-16">
           
           {/* Rooms Gallery */}
           <div>
             <ScrollReveal direction="left" duration={0.6}>
-              <h2 className="text-3xl font-bold mb-8 text-primary border-b border-border pb-4" style={{ fontFamily: 'var(--font-heading)' }}>
+              <h2 className="text-3xl font-bold mb-8 text-[#0b0c26] border-b-2 border-[#ffcc00] pb-4 inline-block pr-6" style={{ fontFamily: 'var(--font-heading)' }}>
                 Rooms
               </h2>
             </ScrollReveal>

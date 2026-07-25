@@ -28,19 +28,19 @@ export default function RoomsPage() {
       <Navigation />
       
       {/* Header */}
-      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground text-center">
+      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#0b0c26] text-white text-center">
         <ScrollReveal direction="down" duration={0.8}>
           <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Our Rooms
           </h1>
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Choose from our collection of luxuriously appointed rooms, each designed with meticulous attention to comfort and elegance.
           </p>
         </ScrollReveal>
       </div>
 
       {/* Filters and Rooms */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#faf9f5]">
         <div className="max-w-7xl mx-auto">
           {/* Filter Buttons */}
           <ScrollReveal direction="up" delay={0.2} duration={0.6}>
@@ -49,10 +49,10 @@ export default function RoomsPage() {
                 <button
                   key={category.value}
                   onClick={() => setSelectedCategory(category.value)}
-                  className={`px-6 py-2 rounded font-semibold transition-colors ${
+                  className={`px-6 py-2 rounded-full font-semibold transition-all ${
                     selectedCategory === category.value
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-foreground hover:bg-muted/80'
+                      ? 'bg-[#ffcc00] text-slate-950 shadow-md'
+                      : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
                   {category.label}

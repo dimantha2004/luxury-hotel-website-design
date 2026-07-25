@@ -109,15 +109,15 @@ const tourPackages: TourPackage[] = [
 
 export default function Tours() {
   return (
-    <section id="tours" className="w-full py-16 md:py-24 bg-white text-slate-800">
+    <section id="tours" className="w-full py-16 md:py-24 bg-[#faf9f5] text-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <ScrollReveal direction="down" duration={0.8}>
           <div className="text-center mb-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[#0a0c27] tracking-tight mb-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#0b0c26] tracking-tight mb-6">
               Our Tour Packages
             </h2>
-            <p className="text-sm md:text-base text-slate-500 leading-relaxed font-normal px-4">
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed font-normal px-4">
               Whether you&apos;re a solo traveler seeking adventure, a couple on a romantic getaway, or a family looking for a fun-filled vacation, Tours Sri Lanka is dedicated to crafting custom itineraries that suit your unique style and interests. Our packages are thoughtfully designed to ensure you experience the best of Sri Lanka while catering to your specific travel needs. From exciting adventures to relaxing escapes, we have something for everyone.
             </p>
           </div>
@@ -146,13 +146,13 @@ export default function Tours() {
 
                   {/* Default State Badge (Overlaid at bottom of image) */}
                   <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[85%] text-center transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
-                    <div className="bg-[#0b0c26] text-white font-bold text-base md:text-lg py-2.5 px-4 rounded-xl shadow-lg">
+                    <div className="bg-[#0b0c26] text-white font-bold text-base md:text-lg py-2.5 px-4 rounded-xl shadow-lg border border-white/10">
                       {pkg.badgeTitle}
                     </div>
                   </div>
 
                   {/* Hover / Active Dark Card Overlay (Exact match to Image 2) */}
-                  <div className="absolute inset-0 bg-[#0b0c26] p-6 text-white flex flex-col justify-between items-center text-center opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl z-10">
+                  <div className="absolute inset-0 bg-[#0b0c26] p-6 text-white flex flex-col justify-between items-center text-center opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl z-10 border border-white/10">
                     <h3 className="text-xl font-bold text-white pt-2">
                       {pkg.hoverTitle}
                     </h3>
@@ -161,7 +161,7 @@ export default function Tours() {
                     </p>
                     <Link
                       href={pkg.link}
-                      className="w-full bg-[#ffcc00] hover:bg-[#e6b800] text-slate-900 font-bold py-2.5 px-6 rounded-full shadow-md transition-colors text-sm"
+                      className="w-full bg-[#ffcc00] hover:bg-[#e6b800] text-slate-950 font-bold py-2.5 px-6 rounded-full shadow-md transition-colors text-sm"
                     >
                       Read More
                     </Link>
@@ -172,7 +172,7 @@ export default function Tours() {
                 <div className="mt-4 transition-opacity duration-300 group-hover:opacity-0">
                   <Link
                     href={pkg.link}
-                    className="inline-block bg-[#f0f4f8] hover:bg-slate-200 text-[#ffb700] font-semibold text-sm py-2 px-8 rounded-full shadow-sm transition-colors"
+                    className="inline-block bg-[#f0f4f8] hover:bg-slate-200 text-[#f59e0b] font-semibold text-sm py-2 px-8 rounded-full shadow-sm transition-colors"
                   >
                     Read More
                   </Link>
