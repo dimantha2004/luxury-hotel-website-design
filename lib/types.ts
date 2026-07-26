@@ -3,6 +3,7 @@ export interface Room {
   name: string
   category: 'suite' | 'deluxe' | 'standard'
   price: number
+  originalPrice?: number
   image: string
   description: string
   amenities: string[]

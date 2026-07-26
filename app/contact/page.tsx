@@ -54,30 +54,30 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="w-full">
+    <main className="w-full min-h-screen bg-[#faf9f5] flex flex-col font-sans">
       <Navigation />
 
       {/* Header */}
-      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground text-center">
-        <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
+      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#0b0c26] text-white text-center">
+        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white" style={{ fontFamily: 'var(--font-heading)' }}>
           Contact Us
         </h1>
-        <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-          Get in touch with us. We&apos;re here to help make your stay unforgettable.
+        <p className="text-lg text-slate-300 max-w-2xl mx-auto font-normal">
+          Get in touch with us for room reservations, customized tour packages, or any inquiries. We&apos;re here to make your Sri Lankan journey memorable!
         </p>
       </div>
 
       {/* Content */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#faf9f5] flex-1">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-8 bg-white p-8 rounded-2xl shadow-md border border-slate-200/80">
               <div className="flex gap-4">
-                <MapPin className="text-accent flex-shrink-0 mt-1" size={24} />
+                <MapPin className="text-[#ffcc00] flex-shrink-0 mt-1" size={24} />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Address</h3>
-                  <p className="text-foreground/70">
+                  <h3 className="font-bold text-lg mb-1 text-[#0b0c26]">Address</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     Thilina home stay<br />
                     21 post denike rikillagskda
                   </p>
@@ -85,87 +85,87 @@ export default function ContactPage() {
               </div>
 
               <div className="flex gap-4">
-                <Phone className="text-accent flex-shrink-0 mt-1" size={24} />
+                <Phone className="text-[#ffcc00] flex-shrink-0 mt-1" size={24} />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Phone</h3>
-                  <p className="text-foreground/70">+94783113499</p>
+                  <h3 className="font-bold text-lg mb-1 text-[#0b0c26]">Phone</h3>
+                  <p className="text-slate-600 text-sm font-semibold">+94783113499</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <Mail className="text-accent flex-shrink-0 mt-1" size={24} />
+                <Mail className="text-[#ffcc00] flex-shrink-0 mt-1" size={24} />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Email</h3>
-                  <p className="text-foreground/70">rthilina021@gmail.com</p>
+                  <h3 className="font-bold text-lg mb-1 text-[#0b0c26]">Email</h3>
+                  <p className="text-slate-600 text-sm font-semibold">rthilina021@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <Clock className="text-accent flex-shrink-0 mt-1" size={24} />
+                <Clock className="text-[#ffcc00] flex-shrink-0 mt-1" size={24} />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Hours</h3>
-                  <p className="text-foreground/70">Mon - Sun: 24/7</p>
-                  <p className="text-foreground/70">Concierge Available</p>
+                  <h3 className="font-bold text-lg mb-1 text-[#0b0c26]">Hours</h3>
+                  <p className="text-slate-600 text-sm">Mon - Sun: 24/7 Service</p>
+                  <p className="text-slate-500 text-xs mt-0.5">Concierge & Driver Available</p>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="md:col-span-2 bg-card p-8 rounded shadow-lg">
-              <h2 className="text-3xl font-bold mb-6 text-primary" style={{ fontFamily: 'var(--font-heading)' }}>
+            <div className="md:col-span-2 bg-white p-8 rounded-2xl shadow-md border border-slate-200/80">
+              <h2 className="text-3xl font-extrabold mb-6 text-[#0b0c26]" style={{ fontFamily: 'var(--font-heading)' }}>
                 Send Us a Message
               </h2>
 
               {submitted && (
-                <div className="mb-6 p-4 bg-accent/20 text-accent-foreground rounded">
-                  <p className="font-semibold">Thank you! Your message has been sent successfully.</p>
+                <div className="mb-6 p-4 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-xl">
+                  <p className="font-semibold text-sm">Thank you! Your message has been sent successfully.</p>
                 </div>
               )}
 
               {error && (
-                <div className="mb-6 p-4 bg-destructive/20 text-destructive rounded">
-                  <p className="font-semibold">{error}</p>
+                <div className="mb-6 p-4 bg-rose-50 text-rose-800 border border-rose-200 rounded-xl">
+                  <p className="font-semibold text-sm">{error}</p>
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-foreground">Full Name</label>
+                    <label className="block text-sm font-bold mb-2 text-[#0b0c26]">Full Name</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffcc00] bg-slate-50 text-slate-800"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-foreground">Email</label>
+                    <label className="block text-sm font-bold mb-2 text-[#0b0c26]">Email Address</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffcc00] bg-slate-50 text-slate-800"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-foreground">Message</label>
+                    <label className="block text-sm font-bold mb-2 text-[#0b0c26]">Message</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows={5}
                       required
-                      className="w-full px-4 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background"
-                      placeholder="How can we help you?"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffcc00] bg-slate-50 text-slate-800"
+                      placeholder="How can we help you with your stay or tour?"
                     />
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:opacity-90 transition-opacity mt-4 disabled:opacity-50"
+                  className="w-full bg-[#ffcc00] hover:bg-[#e6b800] text-slate-950 py-3.5 rounded-xl font-extrabold shadow-md transition-all mt-4 disabled:opacity-50 text-base"
                 >
                   {loading ? 'Sending...' : 'Send Message'}
                 </button>

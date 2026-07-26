@@ -16,6 +16,16 @@ interface TourPackage {
 
 const tourPackages: TourPackage[] = [
   {
+    id: 'mandaram-nuwara',
+    title: 'Mandaram Nuwara & Cultural Village Tour',
+    badgeTitle: 'Mandaram Nuwara & Cultural Village Tour',
+    hoverTitle: 'Mandaram Nuwara & Cultural Village Tour',
+    image: '/tours/mandaram-nuwara.jpg',
+    description:
+      'Discover the Misty City of Mandaram Nuwara, Bellwood, organic farms in Rikillagaskada, historic Hanguranketha & local village cultural shows.',
+    link: '/tours/mandaram-nuwara',
+  },
+  {
     id: 'kandy',
     title: 'Kandy City Tour',
     badgeTitle: 'Kandy City Tour',

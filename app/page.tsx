@@ -10,8 +10,8 @@ export default function Page() {
     <main className="w-full">
       <Navigation />
       <Hero />
-      <FeaturedRooms />
       <Tours />
+      <FeaturedRooms />
       <Testimonials />
       <Footer />
     </main>

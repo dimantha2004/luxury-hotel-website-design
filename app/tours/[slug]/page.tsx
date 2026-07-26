@@ -28,9 +28,9 @@ export default async function TourDetailPage({ params }: PageProps) {
 
       <main className="flex-1 py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column - Large Vertical Image */}
-            <div className="lg:col-span-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Left Column - Images */}
+            <div className="lg:col-span-5 space-y-6">
               <ScrollReveal direction="scale" duration={0.8}>
                 <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-slate-100">
                   <Image
@@ -43,6 +43,20 @@ export default async function TourDetailPage({ params }: PageProps) {
                   />
                 </div>
               </ScrollReveal>
+
+              {tour.secondaryImage && (
+                <ScrollReveal direction="scale" delay={0.2} duration={0.8}>
+                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-slate-100">
+                    <Image
+                      src={tour.secondaryImage}
+                      alt={`${tour.title} landscape`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
+                  </div>
+                </ScrollReveal>
+              )}
             </div>
 
             {/* Right Column - Content */}
@@ -71,8 +85,58 @@ export default async function TourDetailPage({ params }: PageProps) {
                 </p>
               </ScrollReveal>
 
+              {/* Highlights Section (If present) */}
+              {tour.highlights && tour.highlights.length > 0 && (
+                <ScrollReveal direction="up" delay={0.35} duration={0.6}>
+                  <div className="mb-8 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                    <h3 className="text-xl font-extrabold text-[#0b0c26] mb-4 flex items-center gap-2">
+                      <span>🏞</span> Highlights
+                    </h3>
+                    <ul className="space-y-3">
+                      {tour.highlights.map((item, idx) => (
+                        <li key={idx} className="text-sm md:text-base text-slate-700 leading-relaxed">
+                          <strong className="text-[#0b0c26] font-bold">{item.name}:</strong> {item.detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              )}
+
+              {/* Cultural Experiences Section (If present) */}
+              {tour.culturalExperiences && tour.culturalExperiences.length > 0 && (
+                <ScrollReveal direction="up" delay={0.4} duration={0.6}>
+                  <div className="mb-8 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                    <h3 className="text-xl font-extrabold text-[#0b0c26] mb-4 flex items-center gap-2">
+                      <span>🎭</span> Cultural Experiences
+                    </h3>
+                    <ul className="space-y-3">
+                      {tour.culturalExperiences.map((item, idx) => (
+                        <li key={idx} className="text-sm md:text-base text-slate-700 leading-relaxed">
+                          <strong className="text-[#0b0c26] font-bold">{item.title}:</strong> {item.detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              )}
+
+              {/* Comfort & Guidance (If present) */}
+              {tour.guidance && (
+                <ScrollReveal direction="up" delay={0.45} duration={0.6}>
+                  <div className="mb-8 p-6 bg-[#0b0c26] text-white rounded-2xl shadow-md border border-white/10">
+                    <h3 className="text-lg font-bold mb-2 flex items-center gap-2 text-[#ffcc00]">
+                      <span>🚐</span> Comfort & Guidance
+                    </h3>
+                    <p className="text-sm md:text-base text-slate-200 leading-relaxed">
+                      {tour.guidance}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              )}
+
               {/* Feature Cards Grid (Yellow Icons) */}
-              <ScrollReveal direction="up" delay={0.4} duration={0.6}>
+              <ScrollReveal direction="up" delay={0.5} duration={0.6}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   {/* Personalized Tours Box */}
                   <div className="flex items-center gap-4">
@@ -107,7 +171,7 @@ export default async function TourDetailPage({ params }: PageProps) {
               </ScrollReveal>
 
               {/* Checklist Items */}
-              <ScrollReveal direction="up" delay={0.5} duration={0.6}>
+              <ScrollReveal direction="up" delay={0.55} duration={0.6}>
                 <div className="space-y-3 mb-10">
                   {tour.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-3">
@@ -147,4 +211,5 @@ export default async function TourDetailPage({ params }: PageProps) {
     </div>
   )
 }
+
 

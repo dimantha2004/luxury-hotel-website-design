@@ -1,9 +1,23 @@
+export interface HighlightItem {
+  name: string
+  detail: string
+}
+
+export interface CulturalItem {
+  title: string
+  detail: string
+}
+
 export interface TourDetail {
   slug: string
   title: string
   subtitle: string
   image: string
+  secondaryImage?: string
   description: string
+  highlights?: HighlightItem[]
+  culturalExperiences?: CulturalItem[]
+  guidance?: string
   features: string[]
 }
 
@@ -89,4 +103,28 @@ export const tourDetailsMap: Record<string, TourDetail> = {
       "At Tours Sri Lanka, our Ella Tour invites you to experience one of Sri Lanka's most picturesque mountain destinations. Famous for the architectural marvel of the Nine Arches Bridge, panoramic hikes up Little Adam's Peak and Ella Rock, cascading Ravana Waterfalls, and lush tea estates, Ella offers breathtaking mountain scenery and relaxing vibes. Guided by our expert team with private luxury transport, book your unforgettable Ella getaway with us today!",
     features: ['Customized Tours', 'Local Expertise', '24/7 Support'],
   },
+  'mandaram-nuwara': {
+    slug: 'mandaram-nuwara',
+    title: 'Mandaram Nuwara & Cultural Village Tour',
+    subtitle: 'Discover Hidden Valleys, Waterfalls & Heritage Villages',
+    image: '/tours/mandaram-nuwara.jpg',
+    secondaryImage: '/tours/mandaram-nuwara-2.jpg',
+    description:
+      'Discover the hidden beauty of Sri Lanka with our exclusive journey through Mandaram Nuwara, Bellwood, and the charming villages around Rikillagaskada and Hanguranketha. This tour blends breathtaking landscapes with authentic cultural encounters, offering guests a truly immersive experience.',
+    highlights: [
+      { name: 'Mandaram Nuwara', detail: 'Known as the "Misty City," explore waterfalls, lush greenery, and serene village life.' },
+      { name: 'Bellwood', detail: 'A tranquil escape surrounded by forests and rivers.' },
+      { name: 'Rikillagaskada', detail: 'Visit local cultivating farms and learn traditional farming practices directly from villagers.' },
+      { name: 'Hanguranketha', detail: 'Step into history and experience the cultural richness of this ancient royal town.' },
+    ],
+    culturalExperiences: [
+      { title: 'Village Cultural Show', detail: 'Enjoy traditional dance, music, and folk performances.' },
+      { title: 'Cooking with Locals', detail: 'Join families in preparing authentic Sri Lankan meals.' },
+      { title: 'Handicrafts', detail: 'Witness artisans at work and explore handmade crafts unique to the region.' },
+    ],
+    guidance:
+      'Our tours are led by expert guides and include comfortable transport with flexible scheduling, ensuring a seamless and enriching travel experience.',
+    features: ['Customized Tours', 'Local Expertise', '24/7 Support', 'Village Cultural Shows', 'Organic Farm Visits'],
+  },
 }
+
